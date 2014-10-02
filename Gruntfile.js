@@ -5,22 +5,23 @@ module.exports = function(grunt) {
     compass: {                  // Task
       dist: {                   // Target
         options: {              // Target options
-          sassDir: 'sass',
+          sassDir: 'scss',
           cssDir: 'css',
-          environment: 'production'
+          environment: 'production',
+          outputStyle: 'compact'
         }
       }
     },
     autoprefixer: {
       options: {
-        browsers: ['last 2 version', 'ie 8', 'ie 9']
+        browsers: ['last 5 version', 'ie 8', 'ie 8']
       },
       // prefix all files
       multiple_files: {
         expand: true,
         flatten: true,
-        src: 'src/css/*.css', // -> src/css/file1.css, src/css/file2.css
-        dest: 'dest/css/' // -> dest/css/file1.css, dest/css/file2.css
+        src: 'css/*.css', // -> css/file1.css, src/css/file2.css
+        dest: 'css/' // -> css/file1.css, dest/css/file2.css
       }
     },
     watch: {
